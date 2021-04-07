@@ -1,0 +1,20 @@
+*{
+    color: white;
+    background-color: #343434;
+    margin-left: 0px;
+    
+}
+
+button{
+    margin: 10px;
+}
+.container{
+    background-color: #343434;
+}
+.recipe{
+    border-bottom: 2px solid red;
+    background-color: #121212;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+} 
