@@ -1,20 +1,55 @@
-*{
+body{
     color: white;
     background-color: #343434;
-    margin-left: 0px;
-    
+    font-family: 'New Tegomin', serif;
+    margin: 20px;
+}
+input{
+    width: 80%;
+    display: block;
+    padding: 5px;
+    background-color: white;
+    color: black;
 }
 
 button{
     margin: 10px;
+    
+    height: 35px;
+ 
 }
-.container{
-    background-color: #343434;
+
+h2,h3,h4,h5,h6,p{
+    background-color: #121212;
 }
-.recipe{
+
+
+.input-form{
+
     border-bottom: 2px solid red;
     background-color: #121212;
-    padding: 20px;
-    margin-bottom: 20px;
+    margin: auto;
+    margin-bottom: 30px;
     border-radius: 25px;
+    width: 80%;
+    display: flex;
+    padding: 30px;
+    
+}
+
+.form-group{
+    width: 100%;
+}
+.recipe{
+    border: 2px solid black;
+    border-bottom: 2px solid red;
+    background-color: #121212;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    
 } 
