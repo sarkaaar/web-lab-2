@@ -1,8 +1,40 @@
 $(function () {
     loadRecipies();
     $("#recipies").on("click", ".btn-danger", delrecipe);
+    $("#recipies").on("click", ".btn-warning", handleUpdate);
+    //    $("#recipies").on("click", ".btn-primary", addrecipe);
+    $("#addBtn").click(addRecipe);
 });
 
+function handleUpdate() {
+    $("#updateModal").modal("show");
+
+}
+
+function addRecipe() {
+    var title = $("#title").val();
+    var discription = $("#discription").val();
+
+    $.ajax({
+        type: "POST",
+        url: "https://usman-recipes.herokuapp.com/api/recipes",
+        data: { title, discription },
+        success: function (response) {
+            console.log(response);
+            loadRecipies();
+
+        }
+    });
+}
+
+
+
+// function addrecipe() {
+
+//     var btn = $(this);
+//     var parent = btn.closest(".recipe");
+//     let id = parent.attr("data-id");
+// }
 
 function delrecipe() {
 
@@ -11,22 +43,14 @@ function delrecipe() {
     let id = parent.attr("data-id");
     console.log(id);
     $.ajax({
-        
+
         url: "https://usman-recipes.herokuapp.com/api/recipes/" + id,
         method: "DELETE",
-        success: function() { 
+        success: function () {
             loadRecipies();
-        } 
+        }
     })
-
-
-
-
-
-
-
 }
-
 
 function loadRecipies() {
     $.ajax({

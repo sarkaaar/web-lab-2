@@ -4,33 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API AJAX Requests</title>
     <script src="./jquery-3.6.0.js"></script>
     <script src="./script.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./img.jpg">
 </head>
 
 <body>
+    <header>
+        <h1>RRQUEST API CLIENT</h1>
+    </header>
 
-    <h1>Request Api Client</h1>
+    <!-- Input From -->
     <div class="input-form">
 
         <div class="form-group">
             <label for="Title">Title</label>
-            <input type="text" class="title" name="" id="title" placeholder="title">
+            <input type="text" class="title" name="" id="title" placeholder="Title">
         </div>
         <div class="form-group">
             <label for="Discription">Discription</label>
-            <input type="text" class="Discription" name="" id="Discription" placeholder="Discription">
+            <input type="text" class="discription" name="" id="discription" placeholder="Discription">
+
         </div>
 
+        <button id="addBtn" class="btn btn-primary">Add Recipe</button>
+
     </div>
-    <button id="addBtn" class="btn btn-primary">Add Recipe</button>
     <div id="recipies">
         <h2>Recipies will load here</h2>
     </div>
 
+    <!-- Button trigger modal -->
+
+    <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+        Launch
+    </button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="updateModel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Record</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="updateTitle" placeholder="Title"><br>
+                    <input type="text" id="updateDiscription" placeholder="Discription"><br> 
+                </div>
+                <div class="modal-footer">
+                    <button id="updateSave" class="btn btn-primary">UPDATE</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
