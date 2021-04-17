@@ -11,12 +11,24 @@ input {
     background-color: white;
     color: black;
 }
+input{
+    border-radius: 5px;
+    color: black;
+    background-color: rgb(211, 211, 211);
+}
 
 button {
     margin: 10px;
     height: 35px;
 }
 
+.modal-body,label,.modal-footer,.modal-header{
+    background-color:#343434;
+    color: white;
+}
+.modal-content{
+    border: 2px solid white;
+}
 h2, h3, h4, h5, h6, p {
     background-color: #121212;
 }

@@ -2,12 +2,35 @@ $(function () {
     loadRecipies();
     $("#recipies").on("click", ".btn-danger", delrecipe);
     $("#recipies").on("click", ".btn-warning", handleUpdate);
-    //    $("#recipies").on("click", ".btn-primary", addrecipe);
     $("#addBtn").click(addRecipe);
+    $("#updateSave").click(function () {
+
+        var id = $("#updateId").val()
+        var title = $("#updateTitle").val()
+        var body = $("#updateDiscription").val()
+        $.ajax({
+            url: "https://usman-recipes.herokuapp.com/api/recipes/" + id,
+            data: { title, body },
+            method: "PUT",
+            success: function (response) {
+                console.log(response);
+                loadRecipies();
+            }
+        })
+    });
 });
 
 function handleUpdate() {
-    $("#updateModal").modal("show");
+    $("#updateModel").modal("show");
+    var btn = $(this);
+    var parent = btn.closest(".recipe");
+    let id = parent.attr("data-id");
+    $.get("https://usman-recipes.herokuapp.com/api/recipes/" + id, function (response) {
+        $("#updateId").val(response._id);
+        $("#updateTitle").val(response.title);
+        $("#updateDiscription").val(response.body);
+        $("#updateModel").modal("show");
+    })
 
 }
 
@@ -22,19 +45,9 @@ function addRecipe() {
         success: function (response) {
             console.log(response);
             loadRecipies();
-
         }
     });
 }
-
-
-
-// function addrecipe() {
-
-//     var btn = $(this);
-//     var parent = btn.closest(".recipe");
-//     let id = parent.attr("data-id");
-// }
 
 function delrecipe() {
 
@@ -71,6 +84,7 @@ function loadRecipies() {
             </div>`)
                 //    recipies.append("<div><h3>" + rec.title + "</h3></div>")
             }
+            
         }
     });
 }
